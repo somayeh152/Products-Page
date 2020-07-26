@@ -1,0 +1,38 @@
+#newProductForm{
+    margin: 50px 200px;
+}
+
+#newProductForm input , textarea{
+    font-size: 0.87rem;
+}
+
+#newProductForm input::placeholder , textarea::placeholder{
+    font-size: 0.75rem;
+}
+
+#newProductForm button{
+    float: right;
+    font-size: 0.87rem;
+    width: 150px;
+    height: 35px;
+}
+
+#newProductForm input:focus{
+    outline: none;
+    box-shadow: 0;
+}
+
+@media screen and (max-width: 768px){
+    #newProductForm{
+        margin: 50px 20px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    #newProductForm{
+        margin: 50px 20px;
+    }
+    #newProductForm button{
+        width: 100%;
+    }
+}

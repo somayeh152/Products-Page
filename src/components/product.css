@@ -1,0 +1,49 @@
+#product_holder {
+    position: relative;
+    width: 250px;
+    min-height: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f7f7;
+    border: 1px solid #e7e7e7;
+    border-radius: 6px;
+    color: #3e4348;
+}
+
+#product_holder img {
+    margin-top: 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#product_holder h4 {
+    font-size: 0.87rem;
+    text-align: right;
+    margin: 10px;
+}
+
+#product_holder h3 {
+    font-size: 0.75rem;
+    text-align: right;
+    margin: 10px;
+    padding-top: 20px;
+}
+
+#product_holder input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+#product_holder .del {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 0.87rem;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    color: #fff;
+    outline-width: 0;
+}

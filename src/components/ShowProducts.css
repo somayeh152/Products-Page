@@ -1,0 +1,24 @@
+
+#newProduct{
+    direction: rtl;
+    padding: 10px 0;
+  }
+  
+  #newProduct button {
+    font-size: 0.87rem;
+    width: 150px;
+    height: 35px;
+  }
+  
+  .products{
+    margin: 40px 20px;
+  }
+  
+  .backBtnHolder{
+    padding: 10px 0;
+  }
+  .backBtnHolder button{
+    font-size: 0.87rem;
+    width: 150px;
+    height: 35px;
+  }
