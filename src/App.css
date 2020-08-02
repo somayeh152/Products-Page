@@ -1,25 +1,26 @@
 @font-face {
   font-family: "IranYekan";
   src:  url("../src/asset/font/iranYekan/woff/iranyekanwebmedium.woff") format("woff"),
-        url("../src/asset/font/iranYekan/ttf/iranyekanwebmedium.ttf") format("ttf");
+        url("../src/asset/font/iranYekan/ttf/iranyekanwebmedium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "IranYekan-Bold";
   src: url("../src/asset/font/iranYekan/woff/iranyekanwebbold.woff") format("woff"),
-       url("../src/asset/font/iranYekan/ttf/iranyekanwebbold.ttf") format("ttf");
+       url("../src/asset/font/iranYekan/ttf/iranyekanwebbold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "IranYekan-fNum";
   src:  url("../src/asset/font/iranYekan/woff/iranyekanwebmediumfanum.woff") format("woff"),
-        url("../src/asset/font/iranYekan/ttf/iranyekanwebmediumfanum.ttf") format("ttf");
+        url("../src/asset/font/iranYekan/ttf/iranyekanwebmediumfanum.ttf") format("truetype");
 }
 
 body{
   padding: 0;
   margin: 0;
-  font-family: 'IranYekan-fNum';
+  font-family: 'IranYekan-fNum' !important;
   font-size: 0.87rem;
   direction: rtl;
+  list-style-type: none;
 }

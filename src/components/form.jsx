@@ -6,10 +6,14 @@ import {handleSubmitAction} from '../actions/index';
 class Form extends React.Component {
     state={
         title: '',
+        author: '',
+        publisher: '',
+        isbn: '',
         price: '',
-        alt: '',
-        src: '',
-        discrp: ''
+        // src: '',
+        imgUrl: '',
+        discrp: '',
+        fav: true
     }
 
     handleChange = e =>{   
@@ -47,9 +51,31 @@ class Form extends React.Component {
                             </div>
                             <div className="form-group col-md-4 col-sm-12">
                             <input className="form-control"
+                                id="inputAuthor" 
+                                type="text"
+                                placeholder="نویسنده کتاب" 
+                                name="author"
+                                value={this.state.author} 
+                                onChange={e => this.handleChange(e)}
+                            />
+                            </div>
+                        </div>
+                        <div className="form-row">
+                            <div className="form-group col-md-4 col-sm-12">
+                            <input className="form-control"
+                                id="inputPublisher" 
+                                type="text"
+                                placeholder="ناشر کتاب" 
+                                name="publisher"
+                                value={this.state.publisher} 
+                                onChange={e => this.handleChange(e)}
+                            />
+                            </div>
+                            <div className="form-group col-md-4 col-sm-12">
+                            <input className="form-control"
                                 id="inputPrice" 
                                 type="number"
-                                placeholder="قیمت" 
+                                placeholder="قیمت کتاب" 
                                 name="price"
                                 value={this.state.price} 
                                 onChange={e => this.handleChange(e)}
@@ -59,11 +85,11 @@ class Form extends React.Component {
                         <div className="form-row">
                             <div className="form-group col-md-4 col-sm-12">
                                 <input className="form-control" 
-                                    id="inputAlt" 
-                                    type="text" 
-                                    placeholder="عنوان جایگزین عکس" 
-                                    name="alt"
-                                    value={this.state.alt}
+                                    id="inputIsbn" 
+                                    type="number" 
+                                    placeholder="شابک" 
+                                    name="isbn"
+                                    value={this.state.isbn}
                                     onChange={e => this.handleChange(e)}
                                 />
                             </div>
@@ -72,8 +98,8 @@ class Form extends React.Component {
                                     id="inputPhoto" 
                                     type="text" 
                                     placeholder="آدرس تصویر" 
-                                    name="src"
-                                    value={this.state.src == null ? '../img/default.jpg' : this.state.src}
+                                    name="imgUrl"
+                                    value={this.state.imgUrl}
                                     onChange={e => this.handleChange(e)}
                                 />
                             </div>
@@ -101,8 +127,7 @@ class Form extends React.Component {
 
 
 const mapStateToProps = state => ({
-    fields: state.app.proFields,
-    proState: state.app
+    fields: state.app.proFields
 })
 
 export default connect(mapStateToProps, {handleSubmitAction})(Form);

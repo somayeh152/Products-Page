@@ -2,16 +2,25 @@ import React from 'react';
 import Product from './product';
 import './ShowProducts.css';
 import { connect } from 'react-redux';
-import { handleDeleteAction , handleFavAction } from '../actions/index';
+import { handleDeleteAction , handleFavAction , loadProducts} from '../actions/index';
 
 class ShowProducts extends React.Component {
 
-    handleDelete = (productId) =>{
-        this.props.handleDeleteAction(productId)
+    handleDelete = (isbn) =>{
+        const {dispatch} = this.props
+        dispatch(handleDeleteAction(isbn));
+    }
+    
+    handleFav = (isbn) => {
+        const {dispatch} = this.props
+        dispatch(handleFavAction(isbn));
     }
 
-    handleFav = (proId) =>{
-        this.props.handleFavAction(proId)
+    componentDidMount(){
+        if(this.props.productsList.length === 0){
+            const {dispatch} = this.props
+            dispatch(loadProducts());
+        }
     }
 
     handleSinglePro = proId => {
@@ -24,35 +33,53 @@ class ShowProducts extends React.Component {
 
 
     render () {
-        return(
-            <div className="container-fluid">
+      
+      if(this.props.productsList.length === 0){
+          return <h3>Loading...</h3>
+      }
+
+        return (
+          <div className="container-fluid product-page">
             <div id="newProduct">
-                <button type="button" className="btn btn-primary m-2" onClick={this.handleNewPro}>
+              <button
+                type="button"
+                className="btn btn-primary m-2"
+                onClick={this.handleNewPro}
+              >
                 محصول جدید
-                </button>
+              </button>
             </div>
             <div className="row products">
-                {this.props.proState.productsList && this.props.proState.productsList.map( product => 
-                    <Product 
-                        key={product.id}
-                        product={product}
-                        onDelete={this.handleDelete} 
-                        onFav={this.handleFav}
+              {this.props.productsList.map((item, index) => (
+                <li key={index}>
+                  {item.book_details.map((book, i) => (
+                    <li key={i}>
+                      <Product
+                        index={index}
+                        isbn={book.primary_isbn10}
+                        title={book.title}
+                        author={book.author}
+                        publisher={book.publisher}
+                        price={book.price}
+                        discrp={book.description}
+                        fav={item.fav}
+                        onDelete={this.handleDelete}
                         onSinglePro={this.handleSinglePro}
-                    />
-                )}
+                        onFav={this.handleFav}
+                      />
+                    </li>
+                  ))}
+                </li>
+              ))}
             </div>
-        </div>
-        )
+          </div>
+        );
     }
 }
 
 
 const mapStateToProps = state => ({
-    proState: state.app
+    productsList: state.app.productsList
 })
 
-
-export default connect(mapStateToProps,{
-    handleDeleteAction, handleFavAction
-})(ShowProducts);
+export default connect(mapStateToProps)(ShowProducts);

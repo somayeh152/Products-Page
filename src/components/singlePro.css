@@ -8,11 +8,19 @@
     color: #3e4348;
 }
 
-#singlePro_holder img{
-    border: 1px solid #aaa;
+#singlePro_holder .imgHolder{
+    text-align: center;
+}
+
+#singlePro_holder .imgHolder img{
+    box-shadow: 0px 0px 2px 0px #aaaaaa;
     border-radius: 3px;
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 85%;
+    background-image: url('../img/bookimg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #singlePro_holder h4 {

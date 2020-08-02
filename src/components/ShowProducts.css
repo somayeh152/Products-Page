@@ -1,3 +1,8 @@
+.product-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 #newProduct{
     direction: rtl;
@@ -11,7 +16,10 @@
   }
   
   .products{
-    margin: 40px 20px;
+    /* margin: 40px 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   
   .backBtnHolder{
