@@ -35,7 +35,11 @@ class ShowProducts extends React.Component {
     render () {
       
       if(this.props.productsList.length === 0){
-          return <h3>Loading...</h3>
+          return (
+            <div className="loadingHolder">
+              <div className="showLoading"></div>
+            </div>
+          )
       }
 
         return (
@@ -46,7 +50,7 @@ class ShowProducts extends React.Component {
                 className="btn btn-primary m-2"
                 onClick={this.handleNewPro}
               >
-                محصول جدید
+                کتاب جدید
               </button>
             </div>
             <div className="row products">
@@ -55,13 +59,8 @@ class ShowProducts extends React.Component {
                   {item.book_details.map((book, i) => (
                     <li key={i}>
                       <Product
-                        index={index}
-                        isbn={book.primary_isbn10}
-                        title={book.title}
-                        author={book.author}
-                        publisher={book.publisher}
-                        price={book.price}
-                        discrp={book.description}
+                        index={index}                        
+                        book={book}
                         fav={item.fav}
                         onDelete={this.handleDelete}
                         onSinglePro={this.handleSinglePro}

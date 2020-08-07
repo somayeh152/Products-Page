@@ -43,7 +43,7 @@ class Form extends React.Component {
                             <input className="form-control" 
                                 id="inputTitle"
                                 type="text"
-                                placeholder="عنوان محصول" 
+                                placeholder="عنوان کتاب" 
                                 name="title"
                                 value={this.state.title} 
                                 onChange={e => this.handleChange(e)}
@@ -108,7 +108,7 @@ class Form extends React.Component {
                             <div className="form-group col-md-8 col-sm-12">
                                 <textarea className="form-control" 
                                     id="inputDiscription" rows="3"
-                                    placeholder="توضیحات محصول" 
+                                    placeholder="توضیحات کتاب" 
                                     name="discrp"
                                     value={this.state.discrp}
                                     onChange={e => this.handleChange(e)}
@@ -116,7 +116,7 @@ class Form extends React.Component {
                             </div>
                         </div>
                         <button type="button" className="btn btn-primary" onClick={() => this.handleSubmit(this.state)} >
-                            افزودن محصول    
+                            افزودن کتاب    
                         </button> 
                     </form> 
              </div>

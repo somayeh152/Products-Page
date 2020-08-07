@@ -24,3 +24,20 @@ body{
   direction: rtl;
   list-style-type: none;
 }
+
+.loadingHolder{
+  background-color: #f1f2f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.showLoading{
+  background-image: url('./img/loading.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 150px;
+  height: 150px;
+}

@@ -22,7 +22,13 @@ class SinglePro extends React.Component {
     }
 
     render() {
-        if(this.props.proState.length === 0 ) return <h3>loading...</h3>
+        if(this.props.proState.length === 0 ){
+            return(
+                <div className="loadingHolder">
+                    <div className="showLoading"></div>
+                </div>
+            )
+        }
 
         const { match } = this.props;
         const product = this.props.proState[match.params.id].book_details[0];
@@ -43,7 +49,7 @@ class SinglePro extends React.Component {
                     <h4>ناشر: <span>{product.publisher}</span></h4>
                     <h4>قیمت: <span>{product.price}</span></h4>
                     <h4>شابک: <span>{product.primary_isbn10}</span></h4>
-                    <h4>توضیحات: <p>{product.discrp}</p></h4>
+                    <h4>توضیحات: <p>{product.description}</p></h4>
                     <h3>علاقه‌مندی<input type="checkbox"  checked={favProduct} onChange={() => this.onFav(product.primary_isbn10)} /></h3>
                 </div>
             </div>
